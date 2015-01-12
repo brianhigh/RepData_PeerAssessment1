@@ -320,6 +320,14 @@ na.row.count
 
 <p><strong>Fill in the missing values with the interval average.</strong></p>
 
+<p>The <strong><em>strategy</em></strong> to fill in the missing values is to substitute the averages 
+previously calculated for the missing (NA) values. The mututate() function of 
+the <em>{dplyr}</em> package and the replace() function of the <em>{base}</em> package will 
+perform the replacement. The is.na() function will test for the presence of NA. 
+Those values of NA in the &ldquo;steps&rdquo; column will be replaced with the interval 
+average (across all days) for the interval which is missing the &ldquo;steps&rdquo; value 
+on that day.</p>
+
 <pre><code class="r"># Create a dataset like the original, but with missing data filled in with the
 # mean for that interval.
 activity.na.is.mean &lt;- activity %&gt;% 
